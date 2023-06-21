@@ -25,7 +25,9 @@ jobs:
         run: pwd
 
       - name: Build with Gradle
-        run: ./CrawlingNotiServer/gradlew clean build
+        run: |
+          cd CrawlingNotiServer
+          ./gradlew clean build
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
