@@ -27,12 +27,13 @@ public class DashSpaceService {
         this.repository = repository;
         System.setProperty("webdriver.http.factory", "jdk-http-client");
         System.setProperty("webdriver.chrome.driver", "/Users/jeongchan-yeong/Desktop/chromedriver");
-        this.driver = new ChromeDriver();
         dashSpaces = new ArrayList<>();
     }
 
     //++알림 추가하기
     public void crawlingTask() {
+        this.driver = new ChromeDriver();
+
         int pageIndex = 1;  //페이지 번호 = 첫 페이지
 
         //웹 연결
