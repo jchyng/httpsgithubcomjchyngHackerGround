@@ -6,7 +6,7 @@ import {
   View,
 } from 'react-native';
 import React, { useState } from 'react';
-import Font from './../components/Font';
+import Font from './components/Font';
 
 const TopicCheck = ({ navigation }) => {
   const [topicCheck, setTopicCheck] = useState([
@@ -92,10 +92,10 @@ const TopicCheck = ({ navigation }) => {
         </View>
         <View style={styles.topicItem}>
           <Text style={styles.topicTitle}>
-            <Font text={'일자리 포털 : 대구일자리포털, 채용정보, 인재정보, 교육/훈련정보, 지원정책 등 대구시의 다양한 일자리정보 제공'} />
+            <Font text={'일자리 포털'} />
           </Text>
           <View style={styles.topicSubItem}>
-            <Text>채용 정보</Text>
+            <Text style={styles.topicSubText}>채용 정보</Text>
             <View style={styles.topicButtonList}>
               <TouchableOpacity
                 onPress={() => onCheck(6)}
@@ -115,7 +115,7 @@ const TopicCheck = ({ navigation }) => {
             </View>
           </View>
           <View style={styles.topicSubItem}>
-            <Text>교육 훈련 정보</Text>
+            <Text style={styles.topicSubText}>교육 훈련 정보</Text>
             <View style={styles.topicButtonList}>
               <TouchableOpacity
                 onPress={() => onCheck(9)}
@@ -125,7 +125,7 @@ const TopicCheck = ({ navigation }) => {
             </View>
           </View>
           <View style={styles.topicSubItem}>
-            <Text>지원 정책</Text>
+            <Text style = {styles.topicSubText}>지원 정책</Text>
             <View style={styles.topicButtonList}>
               <TouchableOpacity
                 onPress={() => onCheck(10)}
@@ -142,18 +142,24 @@ const TopicCheck = ({ navigation }) => {
         </View>
       </View>
       <TouchableOpacity onPress={onNext} style={styles.nextButton}>
-        <Text>다음</Text>
+        <Text style={styles.nextText}>다음</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
+  },
   header: {
+    flex: 2,
     borderBottomWidth: 1,
     marginHorizontal: 20,
-    paddingVertical: 16,
+    marginTop: 15,
+    paddingVertical: 20,
   },
   mainTitle: {
     fontSize: 24,
@@ -162,17 +168,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   topicContainer: {
+    flex: 20,
     padding: 20,
-    justifyContent: 'center',
   },
   topicItem: {
-    justifyContent: 'center',
-    width: '80%',
-    marginBottom: '20%',
-    backgroundColor: '#fff',
-    alignContent: 'space-between',
+    marginVertical: '10%',
   },
-  topicTitle: {},
+  topicTitle: {
+    marginBottom: 10,
+  },
   topicButton: {
     height: 30,
     padding: 5,
@@ -185,23 +189,31 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   nextButton: {
+    flex: 3,
+    justifyContent: 'center',
     width: '100%',
-    height: '10%',
     backgroundColor: '#3F86F8',
-    fontSize: 20,
-    color: '#fff',
   },
   topicSubItem: {
-    width: '60%',
-    backgroundColor: '#F4F4F4',
+    marginLeft: '5%',
+    marginBottom: '13%',
   },
   checkButton: {
     backgroundColor: '#3F86F8',
     borderColor: '#3F86F8',
+    color: '#fff',
   },
   disabledButton: {
     backgroundColor: '#fff',
     borderColor: '#B6B6B6',
+  },
+  nextText: {
+    fontSize: 20,
+    color: '#fff',
+    textAlign: 'center',
+  },
+  topicSubText: {
+    marginBottom: 5,
   },
 });
 
