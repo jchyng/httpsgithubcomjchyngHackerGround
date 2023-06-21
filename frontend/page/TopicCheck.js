@@ -6,7 +6,7 @@ import {
   View,
 } from 'react-native';
 import React, { useState } from 'react';
-import Font from './components/Font';
+import Font from './../components/Font';
 
 const TopicCheck = ({ navigation }) => {
   const [topicCheck, setTopicCheck] = useState([
@@ -125,7 +125,7 @@ const TopicCheck = ({ navigation }) => {
             </View>
           </View>
           <View style={styles.topicSubItem}>
-            <Text style = {styles.topicSubText}>지원 정책</Text>
+            <Text style={styles.topicSubText}>지원 정책</Text>
             <View style={styles.topicButtonList}>
               <TouchableOpacity
                 onPress={() => onCheck(10)}
