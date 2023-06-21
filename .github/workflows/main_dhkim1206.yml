@@ -17,6 +17,9 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: '11'
+          
+      - name: Check MySQL Version
+        run: mysql --version
 
       - name: Build with Gradle
         run: |
