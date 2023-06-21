@@ -53,12 +53,12 @@ const TopicCheck = ({ navigation }) => {
           <View style={styles.topicButtonList}>
             <TouchableOpacity
               onPress={() => onCheck(0)}
-              style={styles.topicButton}>
+              style={[styles.topicButton, topicCheck[0] ? styles.checkButton : styles.disabledButton]}>
               <Text style={styles.topicText}>지원 사업 공고</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => onCheck(1)}
-              style={styles.topicButton}>
+              style={[styles.topicButton, topicCheck[1] ? styles.checkButton : styles.disabledButton]}>
               <Text style={styles.topicText}>입주 공간</Text>
             </TouchableOpacity>
           </View>
@@ -70,22 +70,22 @@ const TopicCheck = ({ navigation }) => {
           <View style={styles.topicButtonList}>
             <TouchableOpacity
               onPress={() => onCheck(2)}
-              style={styles.topicButton}>
+              style={[styles.topicButton, topicCheck[2] ? styles.checkButton : styles.disabledButton]}>
               <Text style={styles.topicText}>일자리</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => onCheck(3)}
-              style={styles.topicButton}>
+              style={[styles.topicButton, topicCheck[3] ? styles.checkButton : styles.disabledButton]}>
               <Text style={styles.topicText}>추가</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => onCheck(4)}
-              style={styles.topicButton}>
+              style={[styles.topicButton, topicCheck[4] ? styles.checkButton : styles.disabledButton]}>
               <Text style={styles.topicText}>교육</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => onCheck(5)}
-              style={styles.topicButton}>
+              style={[styles.topicButton, topicCheck[5] ? styles.checkButton : styles.disabledButton]}>
               <Text style={styles.topicText}>복지 문화</Text>
             </TouchableOpacity>
           </View>
@@ -99,17 +99,17 @@ const TopicCheck = ({ navigation }) => {
             <View style={styles.topicButtonList}>
               <TouchableOpacity
                 onPress={() => onCheck(6)}
-                style={styles.topicButton}>
+                style={[styles.topicButton, topicCheck[6] ? styles.checkButton : styles.disabledButton]}>
                 <Text style={styles.topicText}>공기업</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => onCheck(7)}
-                style={styles.topicButton}>
+                style={[styles.topicButton, topicCheck[7] ? styles.checkButton : styles.disabledButton]}>
                 <Text style={styles.topicText}>공무원</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => onCheck(8)}
-                style={styles.topicButton}>
+                style={[styles.topicButton, topicCheck[8] ? styles.checkButton : styles.disabledButton]}>
                 <Text style={styles.topicText}>사기업</Text>
               </TouchableOpacity>
             </View>
@@ -119,7 +119,7 @@ const TopicCheck = ({ navigation }) => {
             <View style={styles.topicButtonList}>
               <TouchableOpacity
                 onPress={() => onCheck(9)}
-                style={styles.topicButton}>
+                style={[styles.topicButton, topicCheck[9] ? styles.checkButton : styles.disabledButton]}>
                 <Text style={styles.topicText}>교육 훈련 정보</Text>
               </TouchableOpacity>
             </View>
@@ -129,19 +129,19 @@ const TopicCheck = ({ navigation }) => {
             <View style={styles.topicButtonList}>
               <TouchableOpacity
                 onPress={() => onCheck(10)}
-                style={styles.topicButton}>
+                style={[styles.topicButton, topicCheck[10] ? styles.checkButton : styles.disabledButton]}>
                 <Text style={styles.topicText}>사업자</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => onCheck(11)}
-                style={styles.topicButton}>
+                style={[styles.topicButton, topicCheck[11] ? styles.checkButton : styles.disabledButton]}>
                 <Text style={styles.topicText}>구직자</Text>
               </TouchableOpacity>
             </View>
           </View>
         </View>
       </View>
-      <TouchableOpacity onPress={onNext}>
+      <TouchableOpacity onPress={onNext} style={styles.nextButton}>
         <Text>다음</Text>
       </TouchableOpacity>
     </SafeAreaView>
@@ -163,25 +163,45 @@ const styles = StyleSheet.create({
   },
   topicContainer: {
     padding: 20,
+    justifyContent: 'center',
   },
   topicItem: {
     justifyContent: 'center',
     width: '80%',
-    marginBottom: 20,
+    marginBottom: '20%',
+    backgroundColor: '#fff',
+    alignContent: 'space-between',
   },
   topicTitle: {},
   topicButton: {
     height: 30,
     padding: 5,
     borderWidth: 1,
-    borderColor: '#B6B6B6',
     borderRadius: 5,
-    backgroundColor: "#ffffff",
     marginRight: 20,
   },
   topicButtonList: {
     flex: 1,
     flexDirection: 'row',
+  },
+  nextButton: {
+    width: '100%',
+    height: '10%',
+    backgroundColor: '#3F86F8',
+    fontSize: 20,
+    color: '#fff',
+  },
+  topicSubItem: {
+    width: '60%',
+    backgroundColor: '#F4F4F4',
+  },
+  checkButton: {
+    backgroundColor: '#3F86F8',
+    borderColor: '#3F86F8',
+  },
+  disabledButton: {
+    backgroundColor: '#fff',
+    borderColor: '#B6B6B6',
   },
 });
 
