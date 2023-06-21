@@ -21,6 +21,9 @@ jobs:
         with:
           java-version: '11'
 
+      - name: Show Current directory
+        run: pwd
+
       - name: Build with Gradle
         run: ./gradlew clean build
 
