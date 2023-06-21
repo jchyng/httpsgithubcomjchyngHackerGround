@@ -30,6 +30,6 @@ jobs:
     - name: Publish to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
-        app-name: your-app-name
+        app-name: dhkim1206
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: build/libs/your-app-name.jar
+        package: build/libs/dhkim1206.jar
