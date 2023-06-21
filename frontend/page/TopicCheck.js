@@ -65,7 +65,7 @@ const TopicCheck = ({ navigation }) => {
         </View>
         <View style={styles.topicItem}>
           <Text style={styles.topicTitle}>
-            청년 정책 : 대구 청년들을 위한 정책
+            <Font text={'청년 정책 : 대구 청년들을 위한 정책'} />
           </Text>
           <View style={styles.topicButtonList}>
             <TouchableOpacity
@@ -92,8 +92,7 @@ const TopicCheck = ({ navigation }) => {
         </View>
         <View style={styles.topicItem}>
           <Text style={styles.topicTitle}>
-            일자리 포털 : 대구일자리포털, 채용정보, 인재정보, 교육/훈련정보,
-            지원정책 등 대구시의 다양한 일자리정보 제공
+            <Font text={'일자리 포털 : 대구일자리포털, 채용정보, 인재정보, 교육/훈련정보, 지원정책 등 대구시의 다양한 일자리정보 제공'} />
           </Text>
           <View style={styles.topicSubItem}>
             <Text>채용 정보</Text>
@@ -166,9 +165,24 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   topicItem: {
-    marginBottom: 10,
+    justifyContent: 'center',
+    width: '80%',
+    marginBottom: 20,
   },
   topicTitle: {},
+  topicButton: {
+    height: 30,
+    padding: 5,
+    borderWidth: 1,
+    borderColor: '#B6B6B6',
+    borderRadius: 5,
+    backgroundColor: "#ffffff",
+    marginRight: 20,
+  },
+  topicButtonList: {
+    flex: 1,
+    flexDirection: 'row',
+  },
 });
 
 export default TopicCheck;
