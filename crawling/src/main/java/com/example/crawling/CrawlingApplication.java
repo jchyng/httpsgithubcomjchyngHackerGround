@@ -22,7 +22,7 @@ public class CrawlingApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CrawlingApplication.class, args);
 		System.setProperty("webdriver.http.factory", "jdk-http-client");
-		System.setProperty("webdriver.chrome.driver", "/Users/jeongchan-yeong/Desktop/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver");
 		//서버 실행 시 무조건 한번 전체 사이트에 대한 크롤링 진행
 	}
 
