@@ -28,7 +28,7 @@ const TopicCheck = ({ navigation }) => {
   };
 
   const onNext = () => {
-    navigation.navigate('Dash');
+    navigation.navigate('Nav');
   };
 
   return (
