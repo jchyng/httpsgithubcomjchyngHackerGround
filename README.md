@@ -34,8 +34,8 @@
 - 자신의 OS에 맞는 드라이버를 설치해서 Resource에 Driver파일에 넣으시면 됩니다 https://chromedriver.storage.googleapis.com/index.html?path=114.0.5735.16/ 
 
 ## 시작하기
+- 리포지토리를 포크합니다.
 
-- 기본적으로 생서앟는 리소스의 리소스 그룹은 모두 동일하게 설정합니다.
 
 1. <Azure포털에서 리소스 생성> https://portal.azure.com/
    
@@ -137,6 +137,21 @@ github action 자동 배포 설정 방법
 저장 
 
 
+application.preperties설정
+----------------------------------------------------------------------------------------------------------------------
+  포크한 파일 경로 : src->main->resource->application.properties 
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://your-sql-server-url:1433;databaseName={{your-database-name}};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30
+    username: {{your-username}}
+    password: {{your-password}}
+
+를 작성해줍니다. 
+{{your-database-name}} : Ex) sqlserver-dhkim1206(필자 예시)  / 데이터베이스 이름 기입
+
+ {{your-username}} : Ex) dhkim1206 sql server(필자 예시) / 생성하면서 만들었던 관리자 이름을 기입합니다 
+ {{your-password}} : 이 부분에는 sql server생성하면서 만들었던 암호를 입력해줍니다.
 
 
 
