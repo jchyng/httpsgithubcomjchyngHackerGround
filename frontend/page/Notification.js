@@ -58,7 +58,7 @@ const Notification = () => {
               <Font text='알람 여부' />
             </Text>
             <Switch
-              trackColor={{ false: '#767577', true: '#81b0ff' }}
+              trackColor={{ false: '#767577', true: '#3F86F8' }}
               thumbColor={isAlert ? '#f5dd4b' : '#f4f3f4'}
               ios_backgroundColor="#3e3e3e"
               onValueChange={toggleAlertSwitch}
@@ -66,14 +66,16 @@ const Notification = () => {
             />
           </View>
           <View style={styles.nightAlert}>
-            <Font text='방해 금지 모드' />
-            <Font text='23시 ~ 8시' />
+            <View style={styles.nightAlertMessage}>
+              <Font text='방해 금지 모드' />
+              <Font text='(23시 ~ 8시)' />
+            </View>
             <Switch
-              trackColor={{ false: '#767577', true: '#81b0ff' }}
-              thumbColor={isAlert ? '#f5dd4b' : '#f4f3f4'}
+              trackColor={{ false: '#767577', true: '#3F86F8' }}
+              thumbColor={isNightAlert ? '#f5dd4b' : '#f4f3f4'}
               ios_backgroundColor="#3e3e3e"
-              onValueChange={toggleAlertSwitch}
-              value={isAlert}
+              onValueChange={toggleNightSwitch}
+              value={isNightAlert}
             />
           </View>
         </View>
@@ -248,7 +250,7 @@ const styles = StyleSheet.create({
   ms: {
     marginTop: '25%',
     marginLeft: '10%',
-  }
+  },
 });
 
 export default Notification;
