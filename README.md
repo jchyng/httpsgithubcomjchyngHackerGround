@@ -116,8 +116,11 @@ AzureSQL DB 연결 문자열 가져오기
 SQL 데이터베이스 > 연결 문자열 > JDBC 값 복사
 
 웹앱에 들어가서 -> 구성 -> 연결 문자열 -> 새 연결 문자열에서
+
 이름: STORAGE
+
 값: AzureSQL DB 연결 문자열 붙여넣은 후에 Pwd={your_password_here} 부분에 실제 DB 비밀번호 입력
+
 형식: SQLAzure
 
 하고 저장
