@@ -1,8 +1,8 @@
 package com.hackerground.crawlingnotiserver.service.job;
 
 import com.hackerground.crawlingnotiserver.constant.URLs;
-import com.hackerground.crawlingnotiserver.entity.job.JobCompany;
-import com.hackerground.crawlingnotiserver.repository.job.JobCompanyRepository;
+import com.hackerground.crawlingnotiserver.entity.job.JobPublicCompany;
+import com.hackerground.crawlingnotiserver.repository.job.JobPublicCompanyRepository;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -17,19 +17,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+
 @Service
-public class JobCompanyService {
-    private JobCompanyRepository repository;
-    private List<JobCompany> jobCompanies;
+public class JobPublicCompanyService {
+    private JobPublicCompanyRepository repository;
+    private List<JobPublicCompany> jobPublicCompanies;
     private WebDriver driver;
     private int maxPageIndex = 0;
 
 
-    public JobCompanyService(JobCompanyRepository repository) {
+    public JobPublicCompanyService(JobPublicCompanyRepository repository) {
         this.repository = repository;
         System.setProperty("webdriver.http.factory", "jdk-http-client");
         System.setProperty("webdriver.chrome.driver", "/Users/jeongchan-yeong/Desktop/chromedriver");
-        this.jobCompanies = new ArrayList<>();
+        this.jobPublicCompanies = new ArrayList<>();
     }
 
     public boolean crawlingTask() {
@@ -39,7 +40,7 @@ public class JobCompanyService {
         boolean notification = false;   //알림 송신 여부
 
         //웹 연결
-        driver.get(URLs.JobPrivateCompany);
+        driver.get(URLs.JobPublicCompany);
 
         //====================최신 공고 체크====================/
         String pageSource = driver.getPageSource(); //최신순으로 정렬된 페이지
@@ -85,7 +86,7 @@ public class JobCompanyService {
         //DB의 모든 데이터 삭제
         repository.deleteAll();
         //DB에 새로운 데이터 저장
-        Iterable<JobCompany> jobCompanyIterable = jobCompanies;
+        Iterable<JobPublicCompany> jobCompanyIterable = jobPublicCompanies;
         repository.saveAll(jobCompanyIterable);
 
         //브라우저 종료
@@ -102,9 +103,9 @@ public class JobCompanyService {
         String projectId = button.id();
 
         //최신 공고에서 첫 번째 데이터를 DB에서 조회
-        Optional<JobCompany> jobCompany = repository.findById(projectId);
+        Optional<JobPublicCompany> jobPublicCompany = repository.findById(projectId);
         //값이 없다면 새로운 공고가 있음
-        if(jobCompany.isEmpty()){
+        if(jobPublicCompany.isEmpty()){
             return true;
         }
         return false;
@@ -119,9 +120,9 @@ public class JobCompanyService {
 
         //크롤링 된 데이터를 DashAnnouncement foreach를 사용해 객체로 변환
         for (Element element : elements) {
-            JobCompany jobCompany = new JobCompany(element);
+            JobPublicCompany jobCompany = new JobPublicCompany(element);
             //List에 객체 추가
-            jobCompanies.add(jobCompany);
+            jobPublicCompanies.add(jobCompany);
         }
 
         return isClosed;
