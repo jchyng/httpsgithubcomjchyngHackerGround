@@ -25,13 +25,13 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="TopicCheck"
+        initialRouteName="Nav"
         screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Nav" component={Nav} />
-        <Stack.Screen name="Dash" component={Dash} />
+        {/* <Stack.Screen name="Dash" component={Dash} />
         <Stack.Screen name="Job" component={Job} />
         <Stack.Screen name="YouthPolicy" component={YouthPolicy} />
-        <Stack.Screen name="Setting" component={Setting} />
+        <Stack.Screen name="Setting" component={Setting} /> */}
         <Stack.Screen name="Loading" component={Loading} />
         <Stack.Screen name="TopicCheck" component={TopicCheck} />
         <Stack.Screen name="Notification" component={Notification} />
