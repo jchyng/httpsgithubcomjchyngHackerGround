@@ -50,6 +50,11 @@ public class DashAnnouncementService {
 
         //각 페이지를 이동하면서 마감 공고 이전까지 크롤링
         while (true) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             //============================크롤링=============================//
             //크롤링에 사용할 페이지 정보 받기
             pageSource = driver.getPageSource();

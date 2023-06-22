@@ -69,6 +69,11 @@ public class DashSpaceService {
         while (true) {
             //============================크롤링=============================//
             //크롤링에 사용할 페이지 정보 받기
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             pageSource = driver.getPageSource();
             doc = Jsoup.parse(pageSource);
 
