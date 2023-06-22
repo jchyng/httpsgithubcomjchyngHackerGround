@@ -4,13 +4,12 @@ import {
   Text,
   TouchableOpacity,
   View,
-  Image,
   Switch,
 } from 'react-native';
 import React, { useState } from 'react';
-import Font from './components/Font';
+import Font from './../components/Font';
 import { WithLocalSvg } from 'react-native-svg';
-import Back from './assets/back.svg';
+import Back from './../assets/back.svg';
 
 const onBack = ({ navigation }) => {
   navigation.nagigate('Seting');
