@@ -1,4 +1,4 @@
-package com.hackerground.crawlingnotiserver.entity.job;
+package com.example.demo.entity.job;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
