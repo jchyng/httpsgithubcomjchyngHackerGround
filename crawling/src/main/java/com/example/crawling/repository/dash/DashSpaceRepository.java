@@ -1,4 +1,4 @@
-package com.example.crawling.repository;
+package com.example.crawling.repository.dash;
 
 import com.example.crawling.entity.dash.DashSpace;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -2,7 +2,7 @@ package com.example.crawling.service.dash;
 
 import com.example.crawling.constant.URLs;
 import com.example.crawling.entity.dash.DashSpace;
-import com.example.crawling.repository.DashSpaceRepository;
+import com.example.crawling.repository.dash.DashSpaceRepository;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

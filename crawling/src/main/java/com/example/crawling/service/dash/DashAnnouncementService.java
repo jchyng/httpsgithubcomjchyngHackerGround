@@ -2,7 +2,7 @@ package com.example.crawling.service.dash;
 
 import com.example.crawling.constant.URLs;
 import com.example.crawling.entity.dash.DashAnnouncement;
-import com.example.crawling.repository.DashAnnouncementRepository;
+import com.example.crawling.repository.dash.DashAnnouncementRepository;
 import lombok.RequiredArgsConstructor;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -103,7 +103,6 @@ public class DashAnnouncementService {
     }
 
     public boolean saveAnnouncement(Document document) {
-        //여기서는 크롤링만 진행하고 최신 공고 비교와 알림 기능은 도형이가 만든 서비스에 추가
         boolean isClosed = false;
 
         //전체 크롤링 후 저장
