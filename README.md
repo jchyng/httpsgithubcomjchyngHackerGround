@@ -31,7 +31,8 @@
 ### 사전 준비 사항
 
 - 크롬 최신버전 https://www.google.com/chrome/
-- 자신의 OS에 맞는 드라이버를 설치해서 Resource에 Driver파일에 넣으시면 됩니다 https://chromedriver.storage.googleapis.com/index.html?path=114.0.5735.16/ 
+- 자신의 OS에 맞는 드라이버를 설치해서 Resource에 Driver파일에 넣으시면 됩니다 https://chromedriver.storage.googleapis.com/index.html?path=114.0.5735.16/
+- VSCODE(Azure Tools확장장)
 
 ## 시작하기
 - 리포지토리를 포크합니다.
@@ -127,10 +128,15 @@ Storage API 구성 설정하기
 github action 자동 배포 설정 방법
 ----------------------------------------------------------------------------------------------------------------------
 (제일 처음에 만든)웹 앱 리소스에 -> 배포센터 -> 소스 : Github
+
 각 사용자 깃허브로 로그
-조직 : hackerground-kr
+
+조직 : 본인 계정 조직
+
 리포지토리 : fork한 리포지토리 
+
 분기 : main
+
 워크플로 추가
 
 저장 
@@ -138,7 +144,9 @@ github action 자동 배포 설정 방법
 
 application.preperties설정
 ----------------------------------------------------------------------------------------------------------------------
+
   포크한 파일 경로 : src->main->resource->application.properties 
+  
 
 spring:
   datasource:
@@ -147,19 +155,56 @@ spring:
     password: {{your-password}}
 
 를 작성해줍니다. 
+
 {{your-database-name}} : Ex) sqlserver-dhkim1206(필자 예시)  / 데이터베이스 이름 기입
 
  {{your-username}} : Ex) dhkim1206 sql server(필자 예시) / 생성하면서 만들었던 관리자 이름을 기입합니다 
+ 
  {{your-password}} : 이 부분에는 sql server생성하면서 만들었던 암호를 입력해줍니다.
 
+vscode로 배포
+----------------------------------------------------------------------------------------------------------------------------
+
+vscode로 배포를 시작합니다.
+
+![image](https://github.com/hackersground-kr/httpsgithubcomjchyngHackerGround/assets/69470424/f26112f1-f72f-4c7f-ab9c-a0b762688c06)
+
+위에 사전 준비로 vscode Extension에서 AzureTool이 설치 되지 않은 분은 다음을 따라주세요 
+
+![image](https://github.com/hackersground-kr/httpsgithubcomjchyngHackerGround/assets/69470424/cad111ef-e6ab-40f8-8a0b-363032fdca82)
+
+1: extension을 누릅니다
+
+2. azure tools를 검색합니다
+
+3. Azure Tools를 Install합니다
+
+-----------------------------------------------------------
+![image](https://github.com/hackersground-kr/httpsgithubcomjchyngHackerGround/assets/69470424/8e291d8a-a851-4ac2-b3e3-fe80a7b62318)
+
+1.을 눌러 azuretool 탭으로 이동합니다
+2. 해당 부분에 위에서 처음 만든 웹앱 리소스가 보일것입니다.
+
+-------------------------------------------------------------------
+
+
+![image](https://github.com/hackersground-kr/httpsgithubcomjchyngHackerGround/assets/69470424/5225e954-93d0-413c-88da-8dd8e65300e7)
+
+자신이 처음에 만든 웹 앱 리소스를 우클릭하여 Deploy to Web App를 눌러줍니다.
+
+
+![image](https://github.com/hackersground-kr/httpsgithubcomjchyngHackerGround/assets/69470424/3f24d658-0e95-4578-a1ec-5ac788e05788)
+
+
+![image](https://github.com/hackersground-kr/httpsgithubcomjchyngHackerGround/assets/69470424/dc5b9ab5-ae88-4e94-8748-f9ec81549d93)
 
 
 
+![image](https://github.com/hackersground-kr/httpsgithubcomjchyngHackerGround/assets/69470424/c8fa3879-bd29-4a7a-b0b9-a69a78485251)
 
 
+![image](https://github.com/hackersground-kr/httpsgithubcomjchyngHackerGround/assets/69470424/adf6f04c-029a-4968-a034-54796a53c7fa)
 
-
-
-
+이렇게 배포까지 완료하였습니다 :D
 
 
