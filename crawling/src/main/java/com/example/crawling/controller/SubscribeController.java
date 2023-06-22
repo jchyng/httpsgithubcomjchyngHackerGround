@@ -10,7 +10,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-public class Controller {
+public class SubscribeController {
     private final SubscribeService subscribeService;
 
     //토큰 저장
