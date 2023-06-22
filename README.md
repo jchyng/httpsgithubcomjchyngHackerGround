@@ -67,6 +67,7 @@ Java 웹 서버 스택 : Java Se(Embedded Web Server)
 운영체제 : Linux
 지역 : Korea Central
 ![image](https://github.com/hackersground-kr/httpsgithubcomjchyngHackerGround/assets/69470424/356680d7-a263-464d-bc2f-5114c4106483)
+
 <Linux 플랜>
 새로 만들기 클릭
 가격 책정 플랜 - 기본 B1 선택
