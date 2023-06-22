@@ -11,10 +11,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import Loading from './page/Loading';
 import TopicCheck from './page/TopicCheck';
-import Dash from './page/Nav/Dash';
-import Job from './page/Nav/Job';
-import YouthPolicy from './page/Nav/YouthPolicy';
-import Setting from './page/Nav/Setting';
+// import Dash from './page/Nav/Dash';
+// import Job from './page/Nav/Job';
+// import YouthPolicy from './page/Nav/YouthPolicy';
+// import Setting from './page/Nav/Setting';
 import Notification from './page/Notification';
 import Scrap from './page/Scrap';
 import Nav from './page/Nav/Nav';
@@ -25,7 +25,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Nav"
+        initialRouteName="Loading"
         screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Nav" component={Nav} />
         {/* <Stack.Screen name="Dash" component={Dash} />
