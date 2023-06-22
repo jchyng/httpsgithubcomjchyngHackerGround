@@ -28,9 +28,9 @@ public class CrawlingApplication {
 
 	@Scheduled(fixedDelay = 36000000) // Run every 1 hour
 	public void executeTask() {
-//		dashAnnouncementService.crawlingTask();
-//		dashSpaceService.crawlingTask();
-//		jobCompanyService.crawlingTask();
+		dashAnnouncementService.crawlingTask();
+		dashSpaceService.crawlingTask();
+		jobCompanyService.crawlingTask();
 		jobPublicCompanyService.crawlingTask();
 	}
 }
